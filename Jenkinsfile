@@ -1,6 +1,6 @@
 node {
   try {
-    stage('Checkout') {
+    stage('Clone repository') {
       checkout scm
     }
     stage('Environment') {
