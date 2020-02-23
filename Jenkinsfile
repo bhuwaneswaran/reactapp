@@ -11,12 +11,12 @@ node {
     }
    
     stage('Deploy'){
-      if(env.BRANCH_NAME == 'master'){
+     
         sh 'docker build -t reactapp --no-cache .'
         sh 'docker tag reactapp localhost:5000/reactapp'
         sh 'docker push localhost:5000/reactapp'
         sh 'docker rmi -f reactapp localhost:5000/reactapp'
-      }
+      
     }
   }
   catch (err) {
